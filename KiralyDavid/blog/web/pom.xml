@@ -33,6 +33,6 @@
 
   </dependencies>
   <build>
-    <finalName>web</finalName>
+    <finalName>Blog</finalName>
   </build>
 </project>

@@ -19,6 +19,10 @@
       <artifactId>junit</artifactId>
     </dependency>
     <dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+</dependency>
+    <dependency>
     	<groupId>hu.schonherz.blog</groupId>
     	<artifactId>service-api</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
