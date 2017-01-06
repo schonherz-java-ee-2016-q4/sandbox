@@ -1,5 +1,8 @@
 package hu.schonherz.training.jpa.web.controllers;
 
+import hu.schonherz.training.jpa.data.domain.ProductEntity;
+import hu.schonherz.training.jpa.data.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +14,13 @@ import java.util.List;
 @RequestMapping("/")
 public class IndexController {
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @GetMapping(path = "")
     public ModelAndView serveIndex() {
-        final String name = "Jóskagyerek";
-        return new ModelAndView("index", "name", name);
+        List<ProductEntity> products = productRepository.findAll();
+        System.out.println(products.size());
+        return new ModelAndView("index", "products", products);
     }
 }
